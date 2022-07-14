@@ -1,0 +1,5 @@
+1.在使用vs code编写react时默认在js文件中JSX语法无法自动补全，可通过设置添加代码补全功能
+文件–首选项–设置,搜索"emmet.includeLanguages"
+添加项：键javascript，值javascriptreact即可
+2.vscode中出现按 ！+tab  无法快速生成html模板
+点开左下角设置，搜索Trigger Expansion On Tab,选择启用

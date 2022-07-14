@@ -1,0 +1,14 @@
+创建一个项目的流程
+1.yarn init -y 初始化
+2.yarn add react react-dom react-scripts 安装依赖
+3.在package.json文件中配置scripts
+   "scripts": {
+    "start":"react-scripts start",
+    "build":"react-scripts build"
+  }
+4.在package.json文件中配置eslintConfig,会提示文档中不合适的语法
+"eslintConfig": {
+    "extends":[
+      "react-app"
+    ]
+  }
