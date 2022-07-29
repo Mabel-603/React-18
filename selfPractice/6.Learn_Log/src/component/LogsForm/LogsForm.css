@@ -32,6 +32,6 @@
     transition: .3s;
     border: none;
 }
-button:hover{
+.form-btn button:hover{
     background-color: pink;
 }

@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import Card from '../UI/Card'
+import Card from '../UI/Card/Card'
 import './LogsForm.css'
 const LogsForm = (props)=>{
 

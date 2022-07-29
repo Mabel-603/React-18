@@ -1,14 +1,36 @@
+import { useState } from "react";
 import MyDate from "./MyDate/MyDate";
-import Card from "../../UI/Card";
+import Card from "../../UI/Card/Card";
+import ConfirmModal from "../../UI/ConfirmModal/ConfirmModal";
 import "./LogItem.css";
 const LogItem = (props) => {
+  // 添加一个state，记录是否显示确认窗口
+  const [showConfirm, setShowConfirm] = useState(false);
+  // const buttonClick = () => {
+  //   const isDel = window.confirm("确认删除?");
+  //   if (isDel) props.delLogHandler();
+  // };
+
   const buttonClick = () => {
-    const isDel = window.confirm("确认删除?");
-    if (isDel) props.delLogHandler();
+    setShowConfirm(true);
+  };
+  const okHandler = () => {
+    props.delLogHandler();
+    setShowConfirm(false);
+  };
+  const cancelHandler = () => {
+    setShowConfirm(false);
   };
 
   return (
     <Card className="item">
+      {showConfirm && (
+        <ConfirmModal
+          okHandler={okHandler}
+          cancelHandler={cancelHandler}
+          confirmText="该操作不可恢复,确认吗?"
+        />
+      )}
       <MyDate date={props.date} />
       <div className="content">
         <h2 className="desc">{props.desc}</h2>
