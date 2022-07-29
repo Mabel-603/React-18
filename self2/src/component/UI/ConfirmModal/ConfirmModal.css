@@ -1,0 +1,36 @@
+.confirmModal {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+.confirmText {
+  height: 150px;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  line-height: 150px;
+}
+.confirmButton {
+  display: flex;
+  justify-content: flex-end;
+  flex: auto;
+}
+.confirmButton button {
+  width: 60px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px;
+}
+.confirmButton .okButton {
+  background-color: red;
+  color: #fff;
+}
