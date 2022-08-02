@@ -1,0 +1,23 @@
+.Counter {
+  display: felx;
+  align-items: center;
+}
+.Sub,
+.Add {
+  border: none;
+  border-radius: 50%;
+  width: 40rem;
+  height: 40rem;
+  line-height: 40rem;
+  font-size: 20px;
+  padding: 0;
+  background-color: #fcbf49;
+}
+.Sub {
+  background-color: white;
+  border: 1px solid black;
+}
+.Number {
+  padding: 20rem;
+  font-size: 18px;
+}
