@@ -1,15 +1,13 @@
 import classes from "./Counter.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-import TestContext from "../../../store/cart-context";
-import { useContext } from "react";
+
 const Counter = (props) => {
-  const ctx = useContext(TestContext);
   const addButtonHandler = () => {
-    ctx.addItem(props.meal);
+    props.onAdd(props.meal);
   };
   const subButtonHandler = () => {
-    ctx.subItem(props.meal);
+    props.onSub(props.meal);
   };
   return (
     <div className={classes.Counter}>

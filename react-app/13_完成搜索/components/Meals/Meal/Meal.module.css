@@ -12,12 +12,12 @@ img {
 }
 .Title {
   font-weight: normal;
-  font-size: 36rem;
+  font-size: 18px;
   margin: 0;
 }
 .Desc {
   color: #bbb;
-  font-size: 24rem;
+  font-size: 12px;
   padding-right: 40rem;
 }
 .PriceWrapper {
@@ -27,10 +27,10 @@ img {
   padding-right: 40rem;
 }
 .Price {
-  font-size: 36rem;
+  font-size: 18px;
   font-weight: bold;
 }
 .Price::before {
   content: "￥";
-  font-size: 24rem;
+  font-size: 12px;
 }

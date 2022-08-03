@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Meals from "./components/Meals/Meals";
 import TestContext from "./store/cart-context";
-import FilterMeals from "./components/FilterMeals/FilterMeals";
-import Cart from "./components/Cart/Cart";
 const MEALS_DATA = [
   {
     id: "1",
@@ -84,12 +82,6 @@ const App = () => {
     newCart.totalPrice -= meal.price;
     setCartData(newCart);
   };
-  const filterHandler = (keyword) => {
-    const newMealsData = MEALS_DATA.filter(
-      (item) => item.title.indexOf(keyword) !== -1
-    );
-    setMealsData(newMealsData);
-  };
 
   return (
     <div>
@@ -100,9 +92,7 @@ const App = () => {
           subItem,
         }}
       >
-        <FilterMeals onFilter={filterHandler} />
         <Meals mealsData={mealsData} />
-        <Cart />
       </TestContext.Provider>
     </div>
   );

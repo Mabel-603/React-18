@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Meals from "./components/Meals/Meals";
-import TestContext from "./store/cart-context";
-import FilterMeals from "./components/FilterMeals/FilterMeals";
-import Cart from "./components/Cart/Cart";
+import A from "./components/A";
+import B from "./components/B";
+import TestContext from "./store/testContext";
 const MEALS_DATA = [
   {
     id: "1",
@@ -62,7 +62,7 @@ const App = () => {
     totalAmount: 0,
     totalPrice: 0,
   });
-  const addItem = (meal) => {
+  const addMealHandler = (meal) => {
     const newCart = { ...cartData };
     if (newCart.items.indexOf(meal) === -1) {
       newCart.items.push(meal);
@@ -74,7 +74,7 @@ const App = () => {
     newCart.totalPrice += meal.price;
     setCartData(newCart);
   };
-  const subItem = (meal) => {
+  const subMealHandler = (meal) => {
     const newCart = { ...cartData };
     meal.amount -= 1;
     if (meal.amount === 0) {
@@ -84,25 +84,19 @@ const App = () => {
     newCart.totalPrice -= meal.price;
     setCartData(newCart);
   };
-  const filterHandler = (keyword) => {
-    const newMealsData = MEALS_DATA.filter(
-      (item) => item.title.indexOf(keyword) !== -1
-    );
-    setMealsData(newMealsData);
-  };
 
   return (
     <div>
-      <TestContext.Provider
-        value={{
-          ...cartData,
-          addItem,
-          subItem,
-        }}
-      >
-        <FilterMeals onFilter={filterHandler} />
-        <Meals mealsData={mealsData} />
-        <Cart />
+      <TestContext.Provider value={{ name: "佩奇", age: 3 }}>
+        <A />
+        <TestContext.Provider value={{ name: "乔治", age: 2 }}>
+          <B />
+        </TestContext.Provider>
+        <Meals
+          mealsData={mealsData}
+          onAdd={addMealHandler}
+          onSub={subMealHandler}
+        />
       </TestContext.Provider>
     </div>
   );

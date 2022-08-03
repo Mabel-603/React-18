@@ -2,7 +2,6 @@ import { useState } from "react";
 import Meals from "./components/Meals/Meals";
 import TestContext from "./store/cart-context";
 import FilterMeals from "./components/FilterMeals/FilterMeals";
-import Cart from "./components/Cart/Cart";
 const MEALS_DATA = [
   {
     id: "1",
@@ -102,7 +101,6 @@ const App = () => {
       >
         <FilterMeals onFilter={filterHandler} />
         <Meals mealsData={mealsData} />
-        <Cart />
       </TestContext.Provider>
     </div>
   );

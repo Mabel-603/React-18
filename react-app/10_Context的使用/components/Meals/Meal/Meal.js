@@ -11,7 +11,12 @@ const Meal = (props) => {
         <p className={classes.Desc}>{props.meal.desc}</p>
         <div className={classes.PriceWrapper}>
           <span className={classes.Price}>{props.meal.price}</span>
-          <Counter amount={props.meal.amount} meal={props.meal} />
+          <Counter
+            amount={props.meal.amount}
+            onAdd={props.onAdd}
+            onSub={props.onSub}
+            meal={props.meal}
+          />
         </div>
       </div>
     </div>
