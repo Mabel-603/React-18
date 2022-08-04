@@ -104,7 +104,7 @@ const App = () => {
         <FilterMeals onFilter={filterHandler} />
         <Meals mealsData={mealsData} />
         <Cart />
-        {/* <Backdrop /> */}
+        <Backdrop />
       </TestContext.Provider>
     </div>
   );

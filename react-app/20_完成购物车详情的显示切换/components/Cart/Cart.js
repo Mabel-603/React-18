@@ -32,7 +32,7 @@ const Cart = () => {
           ctx.totalAmount === 0 ? classes.Disabled : ""
         }`}
       >
-        jial 去结算
+        去结算
       </button>
     </div>
   );
