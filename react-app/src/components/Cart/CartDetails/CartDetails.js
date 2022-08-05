@@ -36,8 +36,8 @@ const CartDetails = (props) => {
         <div className={classes.MealList}>
           {ctx.items.length == 0
             ? (() => {
-                props.onCancle();
-                return <></>;
+                props.onClick();
+                // return <></>;
               }).call()
             : ctx.items.map((item) => (
                 <Meal noDesc key={item.id} meal={item} />

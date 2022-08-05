@@ -28,7 +28,7 @@ const Cart = () => {
     <div className={classes.Cart} onClick={toggleDetailsHandler}>
       {showCheckout && <Checkout onHideCheckout={hideCheckoutHandler} />}
       {/*引入购物车的详情*/}
-      {showDetails && <CartDetails onCancle={toggleDetailsHandler} />}
+      {showDetails && <CartDetails onClick={toggleDetailsHandler} />}
       <div className={classes.CartIcon}>
         <img src={iconImg} />
         {ctx.totalAmount === 0 ? null : (
