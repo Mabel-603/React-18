@@ -3,7 +3,6 @@ import Meals from "./components/Meals/Meals";
 import TestContext from "./store/cart-context";
 import FilterMeals from "./components/FilterMeals/FilterMeals";
 import Cart from "./components/Cart/Cart";
-import Backdrop from "./components/UI/Backdrop/Backdrop";
 const MEALS_DATA = [
   {
     id: "1",
@@ -85,11 +84,20 @@ const App = () => {
     newCart.totalPrice -= meal.price;
     setCartData(newCart);
   };
+  const clearCart = () => {
+    const newCart = { ...cartData };
+    newCart.items.forEach((item) => delete item.amount);
+    newCart.items = [];
+    newCart.totalAmount = 0;
+    newCart.totalPrice = 0;
+    setCartData(newCart);
+  };
+
   const filterHandler = (keyword) => {
-    const newMealsData = MEALS_DATA.filter(
+    const mealsData = MEALS_DATA.filter(
       (item) => item.title.indexOf(keyword) !== -1
     );
-    setMealsData(newMealsData);
+    setMealsData([...mealsData]);
   };
 
   return (
@@ -99,11 +107,13 @@ const App = () => {
           ...cartData,
           addItem,
           subItem,
+          clearCart,
         }}
       >
         <FilterMeals onFilter={filterHandler} />
         <Meals mealsData={mealsData} />
         <Cart />
+
         {/* <Backdrop /> */}
       </TestContext.Provider>
     </div>

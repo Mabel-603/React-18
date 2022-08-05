@@ -1,0 +1,7 @@
+.Meals {
+  position: absolute;
+  top: 120rem;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: 120rem; /*确保商品页最底部的商品可加入到购物车中*/
+}
